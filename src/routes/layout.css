@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Safira March';
+  src: url('/fonts/SafiraMarch.otf') format('opentype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-text);
+}
+
+@theme {
+  --color-primary: #FFECD1;
+  --color-secondary: #3E000C;
+
+  --color-background: var(--color-primary);
+  --color-text: var(--color-secondary);
+
+  --font-text: 'Josefin Sans', sans-serif;
+  --font-heading: 'Safira March', cursive;
+}
+
+header {
+  font-family: var(--font-heading);
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration-style: wavy;
+}
