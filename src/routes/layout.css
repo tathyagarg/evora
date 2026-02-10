@@ -11,6 +11,11 @@
   src: url('/fonts/SafiraMarch.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Giaza';
+  src: url('/fonts/Giaza.otf') format('opentype');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -20,24 +25,35 @@ body {
 }
 
 @theme {
-  --color-primary: #FFECD1;
-  --color-secondary: #3E000C;
+  --color-secondary: #FFECD1;
+  --color-primary: #3E000C;
+
+  --semi-secondary: rgb(from var(--color-secondary) r g b / 0.05);
+
+  --darker-primary: #32000a;
 
   --color-background: var(--color-primary);
   --color-text: var(--color-secondary);
 
   --font-text: 'Josefin Sans', sans-serif;
-  --font-heading: 'Safira March', cursive;
+  /*--font-heading: 'Safira March', cursive;*/
+  --font-heading: 'Giaza', cursive;
 }
 
 header {
   font-family: var(--font-heading);
 }
 
-a {
+:not(nav) > a {
   text-decoration: underline;
+
+  &:hover {
+    text-decoration-style: wavy;
+  }
 }
 
-a:hover {
-  text-decoration-style: wavy;
+main {
+  background-image: linear-gradient(var(--semi-secondary) 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), var(--semi-secondary) calc(100% - 1.5px)), 
+  linear-gradient(90deg, var(--semi-secondary) 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), var(--semi-secondary) calc(100% - 1.5px));
+  background-size: 100px 100px;
 }
