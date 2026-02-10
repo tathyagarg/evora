@@ -6,6 +6,10 @@
 </script>
 
 <Button>
-  <strong class="text-5xl">{value}</strong>
-  {title}
+  <div class="flex flex-row items-start gap-2">
+    <strong class="text-[3em]/[0.9em]">{value}</strong>
+    <span class="text-md">
+      {title}
+    </span>
+  </div>
 </Button>
