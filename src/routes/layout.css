@@ -29,16 +29,22 @@ body {
   --color-primary: #3E000C;
 
   --darker-secondary: #af9672;
-  --semi-secondary: rgb(from var(--color-secondary) r g b / 0.05);
+  --semi-secondary: rgb(from var(--color-secondary) r g b / 0.075);
 
   --darker-primary: #32000a;
+  --lighter-primary: #5e000f;
 
   --color-background: var(--color-primary);
   --color-text: var(--color-secondary);
 
   --font-text: 'Josefin Sans', sans-serif;
   /*--font-heading: 'Safira March', cursive;*/
-  --font-heading: 'Giaza', cursive;
+  --font-heading: 'Safira March', cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.8;
 }
 
 header {
@@ -54,7 +60,11 @@ header {
 }
 
 main {
-  background-image: linear-gradient(var(--semi-secondary) 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), var(--semi-secondary) calc(100% - 1.5px)), 
+  background-image: linear-gradient(var(--semi-secondary) 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), var(--semi-secondary) calc(100% - 1.5px)),
   linear-gradient(90deg, var(--semi-secondary) 1.5px, transparent 1.5px, transparent calc(100% - 1.5px), var(--semi-secondary) calc(100% - 1.5px));
   background-size: 100px 100px;
+}
+
+main > div {
+  background: radial-gradient(circle at 50% 50%, transparent, var(--color-primary) 90%);
 }
