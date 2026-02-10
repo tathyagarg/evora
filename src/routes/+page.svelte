@@ -5,7 +5,7 @@
     <h1 class="text-[3rem]/tight">Pink Legal Club</h1>
     <h1 class="text-[10rem]/[10rem]">Evora</h1>
     <button
-      class="bg-secondary text-background py-6 px-12 text-2xl rounded-lg shadow-[-6px_6px_0_#af9672]"
+      class="bg-secondary text-background py-6 px-12 text-2xl rounded-lg shadow-[-6px_6px_0_var(--darker-secondary)] ring-2 ring-(--darker-secondary)"
       >Our Work</button
     >
   </div>
