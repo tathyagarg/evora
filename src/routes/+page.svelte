@@ -3,6 +3,46 @@
 
   import Button from "$lib/components/Button.svelte";
   import Stat from "$lib/components/Stat.svelte";
+  import PostPreview from "$lib/components/PostPreview.svelte";
+  import { PostKind, type PostPreviewData } from "$lib/models";
+
+  const latest_posts: PostPreviewData[] = [
+    {
+      kind: PostKind.BlogPost,
+      slug: "legal-aid-for-all",
+      title: "Legal Aid for All: Empowering the Marginalized",
+      excerpt:
+        "Discover how our legal aid initiatives are transforming lives and empowering marginalized communities. From providing free legal services to advocating for justice, we are committed to making a difference. Join us in our mission to create a more equitable society.",
+      img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVnYWwlMjBhZGl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+      created_at: new Date("2024-06-01"),
+      updated_at: null,
+      author: "Tattu",
+      tags: ["legal aid", "empowerment", "marginalized communities"],
+    },
+    {
+      kind: PostKind.BlogPost,
+      slug: "women-in-law-breaking-barriers",
+      title: "Women in Law",
+      excerpt: "Breaking Barriers and Shaping the Future",
+      img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2ltZW4lMjBpbiUyMGxhd3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      created_at: new Date("2024-05-15"),
+      updated_at: null,
+      author: "Tattu",
+      tags: ["women", "law", "breaking barriers"],
+    },
+    {
+      kind: PostKind.OpinionatedPiece,
+      slug: "legal-education-for-all",
+      title: "Legal Education for All",
+      excerpt:
+        "Unlocking Opportunities and Empowering Communities through Legal Education. Our commitment to providing accessible legal education is transforming lives and fostering a more informed society. Join us in our mission to empower individuals with knowledge and create a brighter future for all.",
+      img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVnYWwlMjBlZHVjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+      created_at: new Date("2024-04-30"),
+      updated_at: null,
+      author: "Tattu",
+      tags: ["legal education", "empowerment", "accessible education"],
+    },
+  ];
 </script>
 
 <main
@@ -63,5 +103,13 @@
 
 <!-- class="h-[calc(var(--spacing)*-16-1.5em-2px+100vh)] relative top-[calc(var(--spacing)*16+1.5em+2px)] z-1 bg-(--lighter-primary) py-20 px-12 box-border flex items-center justify-center gap-12 text-lg" -->
 <div
-  class="h-[100vh] relative top-[100vh] z-1 bg-primary py-20 px-12 box-border flex items-center justify-center gap-12 text-lg"
-></div>
+  class="h-[100vh] relative top-[100vh] z-1 bg-primary py-20 px-12 box-border text-lg"
+>
+  <h1 class="text-7xl">Our latest work</h1>
+  <hr />
+  <div class="mt-12 grid grid-cols-3 gap-12">
+    {#each latest_posts as post}
+      <PostPreview data={post} />
+    {/each}
+  </div>
+</div>
