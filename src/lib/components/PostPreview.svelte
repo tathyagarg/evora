@@ -34,7 +34,7 @@
       <h2 class="text-2xl">{data.title}</h2>
       <div class="flex gap-4 text-sm text-primary/50">
         <span>By {data.author}</span>
-        <span>{data.created_at.toLocaleDateString()}</span>
+        <span>{data.created_at.toDateString()}</span>
       </div>
       <div class="flex gap-2">
         {#each data.tags as tag}

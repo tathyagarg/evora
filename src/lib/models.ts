@@ -19,3 +19,7 @@ export interface PostPreviewData {
 
   tags: string[];
 };
+
+export interface PostData extends PostPreviewData {
+  content: string;
+}
