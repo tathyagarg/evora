@@ -1,13 +1,14 @@
 <script lang="ts">
   import PostPreview from "$lib/components/PostPreview.svelte";
-  import { PostKind } from "$lib/models";
-  import { posts } from "$lib/posts";
+  import { PostKind, type PostFilter } from "$lib/models.js";
 
   type TestType = {
     name: string;
   };
 
-  type PostFilter = PostKind | TestType;
+  let { data } = $props();
+
+  const posts = data.posts;
 
   var current_filters: PostFilter[] = $state([]);
   let current_posts = $derived.by(() => {
@@ -18,12 +19,13 @@
     }
 
     let required_kind = current_filters.find(
-      (filter: PostFilter) =>
-        filter === PostKind.BlogPost || filter === PostKind.OpinionatedPiece,
+      (filter) => filter.kind !== undefined,
     );
 
     return posts
-      .filter((post) => (required_kind ? post.kind === required_kind : true))
+      .filter((post) =>
+        required_kind ? post.kind === required_kind.kind : true,
+      )
       .sort((a, b) => b.created_at.getTime() - a.created_at.getTime());
   });
 </script>
@@ -38,12 +40,15 @@
         if (value === "all") {
           current_filters = [];
         } else if (value === "blogs") {
-          current_filters = [PostKind.BlogPost];
+          current_filters = [{ kind: PostKind.BlogPost }];
+        } else if (value === "opinionated") {
+          current_filters = [{ kind: PostKind.OpinionatedPiece }];
         }
       }}
     >
       <option value="all">All</option>
       <option value="blogs">Blogs</option>
+      <option value="opinionated">Opinionated</option>
     </select>
   </div>
 </div>

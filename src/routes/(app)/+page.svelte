@@ -6,13 +6,12 @@
   import PostPreview from "$lib/components/PostPreview.svelte";
   import { type PostPreviewData } from "$lib/models";
   import Footer from "$lib/components/Footer.svelte";
-  import { posts } from "$lib/posts";
 
-  const latest_posts: PostPreviewData[] = posts
-    .sort((a, b) => b.created_at.getTime() - a.created_at.getTime())
-    .slice(0, 3);
+  let { data } = $props();
 
-  console.log(latest_posts);
+  const latest_posts: PostPreviewData[] = data.latest_posts;
+
+  // console.log(latest_posts);
 
   const stats = [
     { title: "Women and Children helped", value: "400+" },

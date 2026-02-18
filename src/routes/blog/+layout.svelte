@@ -1,10 +1,9 @@
 <!-- default layout -->
 <script lang="ts">
-  import "./layout.css";
+  import Footer from "$lib/components/Footer.svelte";
+  import "../layout.css";
 
   let { children } = $props();
-
-  export const prerender = true;
 </script>
 
 <nav
@@ -17,6 +16,6 @@
   <a href="/contact">Contact</a>
 </nav>
 
-<div class="relative top-[calc(var(--spacing)*16+1.5em+2px)] z-0">
-  {@render children()}
-</div>
+{@render children()}
+
+<Footer top="" />

@@ -22,6 +22,7 @@ body {
 @theme {
   --color-secondary: #FFECD1;
   --color-primary: #3E000C;
+  --color-emphasis: #FFC857;
 
   --darker-secondary: #af9672;
   --semi-secondary: rgb(from var(--color-secondary) r g b / 0.075);

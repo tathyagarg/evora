@@ -1,10 +1,5 @@
-export enum PostKind {
-  BlogPost = 'blog',
-  OpinionatedPiece = 'opinion',
-}
-
 export interface PostPreviewData {
-  kind: PostKind;
+  kind: string;
 
   slug: string;
   title: string;
@@ -17,9 +12,21 @@ export interface PostPreviewData {
 
   author: string;
 
-  tags: string[];
+  tags: {
+    name: string;
+    color: string;
+  }[];
 };
 
 export interface PostData extends PostPreviewData {
   content: string;
+}
+
+export interface PostFilter {
+  kind?: PostKind;
+}
+
+export enum PostKind {
+  BlogPost = "blog",
+  OpinionatedPiece = "opinionated",
 }

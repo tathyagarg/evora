@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { PostPreviewData } from "$lib/models";
   import Button from "./Button.svelte";
+  import Date from "./Date.svelte";
+  import Tag from "./Tag.svelte";
 
   export let data: PostPreviewData;
 
@@ -34,15 +36,11 @@
       <h2 class="text-2xl">{data.title}</h2>
       <div class="flex gap-4 text-sm text-primary/50">
         <span>By {data.author}</span>
-        <span>{data.created_at.toDateString()}</span>
+        <Date date={data.created_at} />
       </div>
       <div class="flex gap-2">
         {#each data.tags as tag}
-          <span
-            class="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full"
-          >
-            {tag}
-          </span>
+          <Tag data={tag} />
         {/each}
       </div>
       <p class="text-lg">{data.excerpt}</p>
