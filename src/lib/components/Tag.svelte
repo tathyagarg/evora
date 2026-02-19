@@ -1,7 +1,7 @@
 <script lang="ts">
   export let data: {
     name: string;
-    color?: string;
+    color: string | null;
   };
 
   const DEFAULT_BG = "107, 114, 128";

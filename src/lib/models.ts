@@ -24,6 +24,7 @@ export interface PostData extends PostPreviewData {
 
 export interface PostFilter {
   kind?: PostKind;
+  tag?: { name: string; color: string | null };
 }
 
 export enum PostKind {

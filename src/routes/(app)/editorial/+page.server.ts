@@ -31,7 +31,20 @@ export const load: PageServerLoad = async () => {
       return post as PostData;
     });
 
+  const all_tags = await db.select({
+    name: tag.name,
+    color: tag.color,
+  })
+    .from(tag)
+    .all();
+
+  all_tags.map((t) => {
+    t.color = t.color || null;
+    return t;
+  })
+
   return {
     posts: latest_posts,
+    tags: all_tags,
   }
 }

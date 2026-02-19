@@ -2,10 +2,6 @@
   import PostPreview from "$lib/components/PostPreview.svelte";
   import { PostKind, type PostFilter } from "$lib/models.js";
 
-  type TestType = {
-    name: string;
-  };
-
   let { data } = $props();
 
   const posts = data.posts;
@@ -30,7 +26,7 @@
   });
 </script>
 
-<div class="flex items-center gap-4 px-12 py-8">
+<div class="flex items-center gap-4 px-12 py-8 w-full *:flex-1">
   <div class="flex items-center gap-2">
     Post kind:
     <select
@@ -54,7 +50,13 @@
 </div>
 
 <div class="grid grid-cols-3 gap-12 px-12 pb-8">
-  {#each current_posts.slice(0, 6) as post}
-    <PostPreview data={post} />
-  {/each}
+  {#if current_posts.length === 0}
+    <p class="text-center col-span-3 text-lg">
+      No posts found for the selected filters.
+    </p>
+  {:else}
+    {#each current_posts.slice(0, 6) as post}
+      <PostPreview data={post} />
+    {/each}
+  {/if}
 </div>
