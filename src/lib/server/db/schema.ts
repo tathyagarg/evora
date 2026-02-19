@@ -1,5 +1,5 @@
-import { timestamp } from 'drizzle-orm/gel-core';
-import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { sql } from 'drizzle-orm';
+import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const post = sqliteTable('post', {
   slug: text('slug').primaryKey(),
@@ -11,8 +11,8 @@ export const post = sqliteTable('post', {
 
   img_url: text('img_url'),
 
-  createdAt: timestamp('created_at').notNull(),
-  updatedAt: timestamp('updated_at'),
+  createdAt: text('created_at').default(sql`(CURRENT_TIMESTAMP)`).notNull(),
+  updatedAt: text('updated_at'),
 
   author: text('author').notNull(),
 });
@@ -25,4 +25,24 @@ export const tag = sqliteTable('tag', {
 export const postTag = sqliteTable('post_tag', {
   postSlug: text('post_slug').references(() => post.slug, { onDelete: 'cascade' }),
   tagName: text('tag_name').references(() => tag.name, { onDelete: 'cascade' }),
+});
+
+export const event = sqliteTable('event', {
+  slug: text('slug').primaryKey(),
+  title: text('title').notNull(),
+  description: text('description').notNull(),
+
+  img_url: text('img_url'),
+
+  startDate: text('start_date').default(sql`(CURRENT_TIMESTAMP)`).notNull(),
+  endDate: text('end_date').default(sql`(CURRENT_TIMESTAMP)`).notNull(),
+
+  location: text('location').notNull(),
+
+  recap: text('recap'),
+});
+
+export const event_posts = sqliteTable('event_posts', {
+  eventSlug: text('event_slug').references(() => event.slug, { onDelete: 'cascade' }),
+  postSlug: text('post_slug').references(() => post.slug, { onDelete: 'cascade' }),
 });

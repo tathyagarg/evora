@@ -28,8 +28,11 @@ export const load: PageServerLoad = async () => {
       console.log(post.tags);
 
       post.tags = JSON.parse(post.tags as string) as { name: string; color: string }[];
+
       return post as PostData;
     });
+
+  console.log(latest_posts);
 
   const all_tags = await db.select({
     name: tag.name,

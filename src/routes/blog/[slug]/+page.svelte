@@ -78,7 +78,7 @@
 
 <style>
   #post-content p:first-child::first-letter {
-    font-size: 3em;
+    font-size: 3.75em;
     font-weight: bold;
     float: left;
     line-height: 1;
@@ -87,6 +87,11 @@
 
   #post-content p:not(:first-child) {
     text-indent: 1.5em;
+  }
+
+  #post-content :global(p) {
+    font-size: 1.25em;
+    text-align: justify;
   }
 
   #post-content :global(img) {
