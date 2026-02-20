@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let date: Date | undefined;
+  export let date: string | undefined;
 
   const absolute_date = new Date(date ?? 0);
 

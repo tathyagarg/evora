@@ -2,7 +2,7 @@ import type { PageServerLoad } from "./$types";
 import { db } from "$lib/server/db";
 import { desc, eq, sql } from "drizzle-orm";
 import { post, postTag, tag } from "$lib/server/db/schema";
-import type { PostData } from "$lib/models";
+import type { PostData, PostPreviewData } from "$lib/models";
 
 export const load: PageServerLoad = async () => {
   const latest_posts = (await db.select({
@@ -29,7 +29,7 @@ export const load: PageServerLoad = async () => {
 
       post.tags = JSON.parse(post.tags as string) as { name: string; color: string }[];
 
-      return post as PostData;
+      return post as PostPreviewData;
     });
 
   console.log(latest_posts);

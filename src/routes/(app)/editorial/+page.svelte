@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Footer from "$lib/components/Footer.svelte";
+  import Heading from "$lib/components/Heading.svelte";
   import PostPreview from "$lib/components/PostPreview.svelte";
   import { PostKind, type PostFilter } from "$lib/models.js";
 
@@ -10,7 +12,8 @@
   let current_posts = $derived.by(() => {
     if (current_filters.length === 0) {
       return posts.sort(
-        (a, b) => b.created_at.getTime() - a.created_at.getTime(),
+        (a, b) =>
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
       );
     }
 
@@ -22,9 +25,14 @@
       .filter((post) =>
         required_kind ? post.kind === required_kind.kind : true,
       )
-      .sort((a, b) => b.created_at.getTime() - a.created_at.getTime());
+      .sort(
+        (a, b) =>
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+      );
   });
 </script>
+
+<Heading text="Editorial" />
 
 <div class="flex items-center gap-4 px-12 py-8 w-full *:flex-1">
   <div class="flex items-center gap-2">
@@ -49,7 +57,7 @@
   </div>
 </div>
 
-<div class="grid grid-cols-3 gap-12 px-12 pb-8">
+<div class="grid grid-cols-3 gap-12 px-12 pb-12">
   {#if current_posts.length === 0}
     <p class="text-center col-span-3 text-lg">
       No posts found for the selected filters.
@@ -60,3 +68,5 @@
     {/each}
   {/if}
 </div>
+
+<Footer top={""} />

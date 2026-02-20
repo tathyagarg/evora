@@ -4,12 +4,13 @@
   import Button from "$lib/components/Button.svelte";
   import Stat from "$lib/components/Stat.svelte";
   import PostPreview from "$lib/components/PostPreview.svelte";
-  import { type PostPreviewData } from "$lib/models";
+  import { type EventPreviewData } from "$lib/models";
   import Footer from "$lib/components/Footer.svelte";
+  import EventPreview from "$lib/components/EventPreview.svelte";
 
   let { data } = $props();
 
-  const latest_posts: PostPreviewData[] = data.latest_posts;
+  const events: EventPreviewData[] = data.events;
 
   // console.log(latest_posts);
 
@@ -78,13 +79,13 @@
 
 <!-- class="h-[calc(var(--spacing)*-16-1.5em-2px+100vh)] relative top-[calc(var(--spacing)*16+1.5em+2px)] z-1 bg-(--lighter-primary) py-20 px-12 box-border flex items-center justify-center gap-12 text-lg" -->
 <div
-  class="h-[100vh] relative top-[100vh] z-1 bg-primary py-20 px-12 box-border text-lg"
+  class="min-h-[100vh] relative top-[100vh] z-1 bg-primary py-20 px-12 box-border text-lg"
 >
   <h1 class="text-7xl">Our latest work</h1>
   <hr />
   <div class="mt-12 grid grid-cols-3 gap-12">
-    {#each latest_posts as post}
-      <PostPreview data={post} />
+    {#each events as event}
+      <EventPreview data={event} />
     {/each}
   </div>
 </div>

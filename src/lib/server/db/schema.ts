@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const post = sqliteTable('post', {
   slug: text('slug').primaryKey(),
@@ -32,7 +32,7 @@ export const event = sqliteTable('event', {
   title: text('title').notNull(),
   description: text('description').notNull(),
 
-  img_url: text('img_url'),
+  imgUrl: text('img_url'),
 
   startDate: text('start_date').default(sql`(CURRENT_TIMESTAMP)`).notNull(),
   endDate: text('end_date').default(sql`(CURRENT_TIMESTAMP)`).notNull(),

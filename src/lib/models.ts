@@ -7,8 +7,8 @@ export interface PostPreviewData {
 
   img: string | null;
 
-  created_at: Date,
-  updated_at: Date | null;
+  created_at: string,
+  updated_at: string | null;
 
   author: string;
 
@@ -30,4 +30,19 @@ export interface PostFilter {
 export enum PostKind {
   BlogPost = "blog",
   OpinionatedPiece = "opinionated",
+}
+
+export interface EventPreviewData {
+  slug: string;
+  title: string;
+  description: string;
+
+  start_date: string;
+  end_date: string | null;
+
+  location: string | null;
+
+  img_url: string | null;
+
+  has_recap: boolean;
 }
