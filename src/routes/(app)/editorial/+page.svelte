@@ -69,4 +69,4 @@
   {/if}
 </div>
 
-<Footer top={""} />
+<Footer top="" />

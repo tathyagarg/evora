@@ -20,6 +20,7 @@
     "@iconify/svelte": "^5.2.1",
     "@libsql/client": "^0.15.15",
     "@sveltejs/adapter-auto": "^7.0.0",
+    "@sveltejs/adapter-cloudflare": "^7.2.8",
     "@sveltejs/adapter-node": "^5.5.2",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.49.1",
@@ -31,6 +32,7 @@
     "drizzle-orm": "^0.45.0",
     "esbuild-register": "^3.6.0",
     "mdsvex": "^0.12.6",
+    "node-addon-api": "^8.5.0",
     "svelte": "^5.45.6",
     "svelte-check": "^4.3.4",
     "tailwindcss": "^4.1.17",
@@ -39,6 +41,7 @@
   },
   "dependencies": {
     "carbon-components-svelte": "^0.101.0",
-    "drizzle-seed": "^0.3.1"
+    "drizzle-seed": "^0.3.1",
+    "node-gyp": "^12.2.0"
   }
 }
