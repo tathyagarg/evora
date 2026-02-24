@@ -37,10 +37,14 @@
     </div>
   </div>
   <div class="flex-4" id="post-content">
-    {#each post?.content.split("\\n\\n") as paragraph}
-      <p class="py-4 text-lg leading-relaxed">
-        {@html paragraph.replace(/\\n/g, "<br>")}
-      </p>
+    {#each post?.content.split("\n\n") as paragraph}
+      {#if !paragraph.startsWith("<ol>")}
+        <p class="py-4 text-lg leading-relaxed">
+          {@html paragraph.replace(/\\n/g, "<br>")}
+        </p>
+      {:else}
+        {@html paragraph}
+      {/if}
     {/each}
     <div class="flex mt-8">
       <Date date={post?.created_at} />
@@ -90,5 +94,28 @@
   :global(.date) {
     margin-left: auto;
     color: var(--darker-secondary);
+  }
+
+  #post-content p > :global(h2) {
+    text-indent: 0;
+    margin-top: 2em;
+    margin-left: 0;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: var(--color-emphasis);
+    font-style: italic;
+  }
+
+  #post-content :global(ol) {
+    list-style: decimal outside;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+
+    font-size: 1.25em;
+    text-align: justify;
+
+    & > :global(li) {
+      margin-bottom: 1em;
+    }
   }
 </style>

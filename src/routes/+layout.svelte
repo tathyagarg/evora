@@ -30,4 +30,8 @@
   const { children } = $props();
 </script>
 
+<svelte:head>
+  <title>Pink Legal Club - Evora</title>
+</svelte:head>
+
 {@render children()}

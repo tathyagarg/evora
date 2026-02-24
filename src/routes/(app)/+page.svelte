@@ -32,7 +32,7 @@
       class="flex h-full w-full flex-col items-center justify-center gap-4 relative z-1"
     >
       <h1 class="text-[2.5rem]">Pink Legal Club</h1>
-      <h1 class="text-[8rem]">Evora</h1>
+      <img src="/assets/logo.png" alt="logo" class="w-[34%] object-contain" />
       <Button>
         <span>Our work</span>
         <Icon icon="mdi:arrow-right" class="text-2xl" />
