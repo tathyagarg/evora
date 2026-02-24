@@ -4,4 +4,5 @@
   <a href="/">Home</a>
   <a href="/editorial">Editorial</a>
   <a href="/work">Our Work</a>
+  <a href="/team">Team</a>
 </nav>
