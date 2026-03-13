@@ -24,58 +24,64 @@
   <span>
     {start_month}
     {start_day}, {start_year}
-    {start_hour % 12 || 12}:{absolute_start_date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}
-    {start_hour >= 12 ? "PM" : "AM"} - {end_hour % 12 || 12}:{absolute_end_date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}
-    {end_hour >= 12 ? "PM" : "AM"}
+    {#if start_hour != end_hour}
+      {start_hour % 12 || 12}:{absolute_start_date
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}
+      {start_hour >= 12 ? "PM" : "AM"} - {end_hour % 12 ||
+        12}:{absolute_end_date.getMinutes().toString().padStart(2, "0")}
+      {end_hour >= 12 ? "PM" : "AM"}
+    {/if}
   </span>
 {:else if start_year == end_year && start_month == end_month}
   <span>
     {start_month}
     {start_day}, {start_year}
-    {start_hour % 12 || 12}:{absolute_start_date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}
-    {start_hour >= 12 ? "PM" : "AM"} - {end_day}, {end_hour % 12 ||
-      12}:{absolute_end_date.getMinutes().toString().padStart(2, "0")}
-    {end_hour >= 12 ? "PM" : "AM"}
+    {#if start_hour != end_hour}
+      {start_hour % 12 || 12}:{absolute_start_date
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}
+      {start_hour >= 12 ? "PM" : "AM"} - {end_day}, {end_hour % 12 ||
+        12}:{absolute_end_date.getMinutes().toString().padStart(2, "0")}
+      {end_hour >= 12 ? "PM" : "AM"}
+    {/if}
   </span>
 {:else if start_year == end_year}
   <span>
     {start_month}
     {start_day}, {start_year}
-    {start_hour % 12 || 12}:{absolute_start_date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}
-    {start_hour >= 12 ? "PM" : "AM"} - {end_month}
-    {end_day}, {end_year}
-    {end_hour % 12 || 12}:{absolute_end_date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}
-    {end_hour >= 12 ? "PM" : "AM"}
+    {#if start_hour != end_hour}
+      {start_hour % 12 || 12}:{absolute_start_date
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}
+      {start_hour >= 12 ? "PM" : "AM"} - {end_month}
+      {end_day}, {end_year}
+      {end_hour % 12 || 12}:{absolute_end_date
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}
+      {end_hour >= 12 ? "PM" : "AM"}
+    {/if}
   </span>
 {:else}
   <span>
     {start_month}
     {start_day}, {start_year}
-    {start_hour % 12 || 12}:{absolute_start_date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}
-    {start_hour >= 12 ? "PM" : "AM"} - {end_month}
-    {end_day}, {end_year}
-    {end_hour % 12 || 12}:{absolute_end_date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0")}
-    {end_hour >= 12 ? "PM" : "AM"}
+    {#if start_hour != end_hour}
+      {start_hour % 12 || 12}:{absolute_start_date
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}
+      {start_hour >= 12 ? "PM" : "AM"} - {end_month}
+      {end_day}, {end_year}
+      {end_hour % 12 || 12}:{absolute_end_date
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}
+      {end_hour >= 12 ? "PM" : "AM"}
+    {/if}
   </span>
 {/if}

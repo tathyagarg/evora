@@ -1,5 +1,5 @@
 import { mdsvex } from 'mdsvex';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -15,9 +15,6 @@ const config = {
     adapter: adapter({
       fallback: '404.html'
     }),
-    paths: {
-      base: process.argv.includes('dev') ? '' : '/evora'
-    }
   },
 
   extensions: ['.svelte', '.svx']

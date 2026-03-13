@@ -15,7 +15,7 @@
   // console.log(latest_posts);
 
   const stats = [
-    { title: "Women and Children helped", value: "400+" },
+    { title: "Women and Children helped", value: "600+" },
     { title: "Events conducted", value: "20+" },
     { title: "Families supported", value: "50+" },
     { title: "Dogs fed", value: "100+" },
@@ -34,8 +34,13 @@
       <h1 class="text-[2.5rem]">Pink Legal Club</h1>
       <img src="/assets/logo.png" alt="logo" class="w-[34%] object-contain" />
       <Button>
-        <span>Our work</span>
-        <Icon icon="mdi:arrow-right" class="text-2xl" />
+        <button
+          onclick={() => (window.location.href = "/work")}
+          class="flex items-center gap-2 cursor-pointer"
+        >
+          <span>Our work</span>
+          <Icon icon="mdi:arrow-right" class="text-2xl" />
+        </button>
       </Button>
     </div>
   </div>

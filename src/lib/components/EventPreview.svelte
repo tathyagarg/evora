@@ -6,7 +6,8 @@
 
   export let data: EventPreviewData;
 
-  let disabled = data.has_recap;
+  let disabled = !data.has_recap;
+  console.log(disabled);
 
   const start_date = new Date(data.start_date);
   const end_date = data.end_date ? new Date(data.end_date) : undefined;
@@ -14,7 +15,8 @@
 
 <Button align_top={true}>
   <button
-    class="w-full h-full flex flex-col gap-4 cursor-pointer text-left"
+    class="w-full h-full flex flex-col gap-4 text-left"
+    class:cursor-pointer={!disabled}
     onclick={() => (window.location.href = `/events/${data.slug}`)}
     aria-label={`Read more about ${data.title}`}
     {disabled}
