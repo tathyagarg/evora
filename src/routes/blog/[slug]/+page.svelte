@@ -14,7 +14,7 @@
   style={`background-image: radial-gradient(circle at 50%, rgba(0,0,0,0.65), rgba(0,0,0,0.0)), url(${post?.img});`}
 >
   <div class="w-[25vw] text-center">
-    <h1 class="text-4xl font-black mb-4">{post?.title}</h1>
+    <h1 class="text-6xl font-black mb-4">{post?.title}</h1>
     <p class="text-lg">{post?.excerpt}</p>
   </div>
 </div>

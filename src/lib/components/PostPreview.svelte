@@ -33,7 +33,7 @@
       class="w-full h-60 object-cover rounded-lg"
     />
     <div class="flex flex-col gap-4">
-      <h2 class="text-2xl">{data.title}</h2>
+      <h2 class="text-4xl">{data.title}</h2>
       <div class="flex gap-4 text-sm text-primary/50">
         <span>By {data.author}</span>
         <Date date={data.created_at} />

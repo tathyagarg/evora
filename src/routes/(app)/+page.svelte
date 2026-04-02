@@ -31,7 +31,7 @@
     <div
       class="flex h-full w-full flex-col items-center justify-center gap-4 relative z-1"
     >
-      <h1 class="text-[2.5rem]">Pink Legal Club</h1>
+      <h1 class="text-6xl">Pink Legal Club</h1>
       <img src="/assets/logo.png" alt="logo" class="w-[34%] object-contain" />
       <Button>
         <button
