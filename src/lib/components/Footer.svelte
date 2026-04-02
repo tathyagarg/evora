@@ -2,10 +2,8 @@
   export let top: string;
 
   const contacts = [
-    { name: "Tattu", email: "67676767@676767.com" },
-    { name: "Tattu", email: "67676767@676767.com" },
-    { name: "Tattu", email: "67676767@676767.com" },
-    { name: "Tattu", email: "67676767@676767.com" },
+    { name: "Riddhima Koul", email: "placeholder@gmail.com" },
+    { name: "Aadithya Raj", email: "placeholder@gmail.com" },
   ];
 </script>
 
