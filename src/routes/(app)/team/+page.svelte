@@ -28,7 +28,7 @@
   />
   <Don
     img="/assets/dons/daya.jpeg"
-    name="Daya"
+    name="Hridaya"
     description="“Great things come in small packages”, I might be small but my intentions are big.
 Hey, my name is Hridaya Shekar Iyer, and I am the project cordniator of plc evora. As a professional dancer, I can confidently say that I am deeply dedicated to the art, using it as a form of expression and connection. Growing up as the daughter of the founders of a nonprofit NGO dedicated to serving the underprivileged, I have always been deeply committed to social service. I am active, friendly, and cheerful, and I strive to contribute positively to those around me. As a former captain, I have developed strong leadership skills and a drive to create meaningful change in the world."
   />
