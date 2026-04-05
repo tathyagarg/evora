@@ -89,11 +89,26 @@
 
   #post-content p > :global(blockquote) {
     text-indent: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
 
   :global(.date) {
     margin-left: auto;
     color: var(--darker-secondary);
+  }
+
+  #post-content :global(h1) {
+    font-size: 1.8em;
+    line-height: 1.2;
+
+    text-indent: 0;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: var(--color-emphasis);
+    font-style: italic;
   }
 
   #post-content p > :global(h2) {
@@ -111,7 +126,6 @@
     margin-left: 1.5em;
     margin-bottom: 1.5em;
 
-    font-size: 1.25em;
     text-align: justify;
 
     & > :global(li) {
