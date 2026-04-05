@@ -30,6 +30,8 @@ export interface PostFilter {
 export enum PostKind {
   BlogPost = "blog",
   OpinionatedPiece = "opinionated",
+  Literature = "literature",
+  Miscellaneous = "misc",
 }
 
 export interface EventPreviewData {
