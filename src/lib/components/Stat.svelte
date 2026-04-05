@@ -6,7 +6,7 @@
 </script>
 
 <Button>
-  <div class="flex flex-row items-start gap-2">
+  <div class="flex flex-col items-start gap-2">
     <strong class="text-[3em]/[0.9em]">{value}</strong>
     <span class="text-lg">
       {title}

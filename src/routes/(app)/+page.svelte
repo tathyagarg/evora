@@ -74,7 +74,7 @@
         law, society, and gender justice.
       </p>
     </div>
-    <div class="flex-1 grid grid-cols-2 gap-12">
+    <div class="grid grid-cols-2 gap-12">
       {#each stats as stat}
         <Stat title={stat.title} value={stat.value} />
       {/each}
