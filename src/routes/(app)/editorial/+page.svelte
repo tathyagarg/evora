@@ -32,7 +32,7 @@
   });
 </script>
 
-<Heading text="Editorial" />
+<Heading text="The Editorial" />
 
 <div class="flex items-center gap-4 px-12 py-8 w-full *:flex-1">
   <div class="flex items-center gap-2">

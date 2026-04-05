@@ -1,10 +1,7 @@
 <script lang="ts">
   export let top: string;
 
-  const contacts = [
-    { name: "Riddhima Koul", email: "placeholder@gmail.com" },
-    { name: "Aadithya Raj", email: "placeholder@gmail.com" },
-  ];
+  const contacts = [{ name: "Email", email: "plc.evora@gmail.com" }];
 </script>
 
 <footer

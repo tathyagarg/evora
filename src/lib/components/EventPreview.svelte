@@ -24,7 +24,7 @@
     <img
       src={data.img_url}
       alt={data.title}
-      class="w-full aspect-[4/5] object-contain rounded-lg content-center"
+      class="w-full aspect-[5/4] object-cover rounded-lg content-center"
     />
     <div class="flex flex-col gap-4">
       <h2 class="text-2xl">{data.title}</h2>
@@ -39,7 +39,9 @@
         </div>
       </div>
       <p class="text-lg">{data.description}</p>
-      <a href="/events/{data.slug}" class="text-secondary">Read more</a>
+      {#if !disabled}
+        <a href="/events/{data.slug}" class="text-primary">Read more</a>
+      {/if}
     </div>
   </button>
 </Button>

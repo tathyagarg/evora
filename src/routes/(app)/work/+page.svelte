@@ -12,7 +12,7 @@
 <Heading text="Our Work" />
 
 <div class="grid grid-cols-3 gap-12 px-12 pb-8">
-  {#each events.slice(0, 6) as event}
+  {#each events as event}
     <EventPreview data={event} />
   {/each}
 </div>

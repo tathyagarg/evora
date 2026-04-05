@@ -17,7 +17,6 @@ export const load: PageServerLoad = async () => {
   })
     .from(event)
     .orderBy(desc(event.startDate))
-    .limit(6);
 
   return {
     events: events as EventPreviewData[],
