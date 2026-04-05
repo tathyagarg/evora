@@ -1,7 +1,18 @@
 <script lang="ts">
   export let top: string;
 
-  const contacts = [{ name: "Email", email: "plc.evora@gmail.com" }];
+  const contacts = [
+    {
+      name: "Email",
+      link: "mailto:plc.evora@gmail.com",
+      label: "plc.evora@gmail.com",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/evora.plc/",
+      label: "@evora.plc",
+    },
+  ];
 </script>
 
 <footer
@@ -15,7 +26,7 @@
       {#each contacts as contact}
         <tr>
           <td>{contact.name}:</td>
-          <td><a href="mailto:{contact.email}">{contact.email}</a></td>
+          <td><a href={contact.link}>{contact.label}</a></td>
         </tr>
       {/each}
     </tbody>
