@@ -69,7 +69,7 @@
       No posts found for the selected filters.
     </p>
   {:else}
-    {#each current_posts.slice(0, 6) as post}
+    {#each current_posts as post}
       <PostPreview data={post} />
     {/each}
   {/if}

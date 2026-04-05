@@ -22,8 +22,7 @@ export const load: PageServerLoad = async () => {
     .leftJoin(postTag, eq(post.slug, postTag.postSlug))
     .leftJoin(tag, eq(postTag.tagName, tag.name))
     .groupBy(post.slug)
-    .orderBy(desc(post.createdAt))
-    .limit(6))
+    .orderBy(desc(post.createdAt)))
     .map((post) => {
       console.log(post.tags);
 
