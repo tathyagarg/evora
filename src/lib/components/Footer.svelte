@@ -21,7 +21,7 @@
 >
   <h1 class="font-bold text-center text-5xl">Contact Us</h1>
   <hr />
-  <table class="w-full mt-8 text-center text-xl">
+  <table class="mx-auto w-1/2 mt-8 text-center text-xl">
     <tbody>
       {#each contacts as contact}
         <tr>
@@ -35,8 +35,6 @@
 
 <style>
   tr {
-    width: 50%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
   }
