@@ -13,7 +13,7 @@
   class="w-screen h-screen flex flex-col items-center justify-center relative z-101 bg-cover bg-center"
   style={`background-image: radial-gradient(circle at 50%, rgba(0,0,0,0.65), rgba(0,0,0,0.0)), url(${post?.img});`}
 >
-  <div class="w-[100vw] sm:w-[50vw] text-center">
+  <div class="w-[90vw] sm:w-[50vw] text-center">
     <h1 class="text-2xl sm:text-6xl font-black mb-4">{post?.title}</h1>
     <p class="text-sm sm:text-lg">{post?.excerpt}</p>
   </div>
