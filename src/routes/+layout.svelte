@@ -32,6 +32,7 @@
 
 <svelte:head>
   <title>Pink Legal Club - Evora</title>
+  <link rel="icon" href="/assets/favicon.png" />
 </svelte:head>
 
 {@render children()}
