@@ -1,5 +1,6 @@
 <script lang="ts">
   import EventPreview from "$lib/components/EventPreview.svelte";
+  import Footer from "$lib/components/Footer.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import PostPreview from "$lib/components/PostPreview.svelte";
   import { PostKind, type PostFilter } from "$lib/models.js";
@@ -11,8 +12,10 @@
 
 <Heading text="Our Work" />
 
-<div class="grid grid-cols-3 gap-12 px-12 pb-8">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-12 px-12 pb-8">
   {#each events as event}
     <EventPreview data={event} />
   {/each}
 </div>
+
+<Footer top={""} />

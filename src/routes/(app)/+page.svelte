@@ -58,11 +58,13 @@
 <div
   class="h-[100vh] relative top-[100vh] z-1 bg-(--lighter-primary) text-lg border-y-2 border-secondary box-content"
 >
-  <div class="flex h-full w-full items-center justify-center gap-12 p-12">
+  <div
+    class="flex flex-col sm:flex-row h-full w-full items-center justify-center gap-12 p-12"
+  >
     <div class="flex-1 box-border">
       <h1 class="text-7xl">Who we are</h1>
       <hr />
-      <p class="mt-4">
+      <p class="mt-4 text-sm sm:text-lg">
         PLC Evora is a club under Pink Legal Clubs, an initiative of Pink
         Legal—India’s largest and only platform dedicated to women’s legal
         rights. Our focus lies in creating social impact and spreading legal
@@ -88,7 +90,7 @@
 >
   <h1 class="text-7xl">Our latest work</h1>
   <hr />
-  <div class="mt-12 grid grid-cols-3 gap-12">
+  <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-12">
     {#each events as event}
       <EventPreview data={event} />
     {/each}

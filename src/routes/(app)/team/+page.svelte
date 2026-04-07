@@ -5,7 +5,7 @@
 
 <Heading text="Our Team" />
 
-<div class="grid grid-rows-2 grid-cols-2 w-full gap-12 p-[8vw]">
+<div class="grid grid-cols-1 sm:grid-cols-2 w-full gap-12 p-[8vw]">
   <Don
     img="/assets/dons/varshini.jpeg"
     name="Varshini"

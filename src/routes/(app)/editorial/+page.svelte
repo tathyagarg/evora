@@ -63,7 +63,7 @@
   </div>
 </div>
 
-<div class="grid grid-cols-3 gap-12 px-12 pb-12">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-12 px-12 pb-12">
   {#if current_posts.length === 0}
     <p class="text-center col-span-3 text-lg">
       No posts found for the selected filters.
