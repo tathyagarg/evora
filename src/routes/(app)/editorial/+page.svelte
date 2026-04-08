@@ -49,6 +49,8 @@
           current_filters = [{ kind: PostKind.OpinionatedPiece }];
         } else if (value === "literature") {
           current_filters = [{ kind: PostKind.Literature }];
+        } else if (value === "knowyourlaws") {
+          current_filters = [{ kind: PostKind.KnowYourLaws }];
         } else if (value === "other") {
           current_filters = [{ kind: PostKind.Miscellaneous }];
         }
@@ -58,6 +60,10 @@
       <option value="blogs">Blogs</option>
       <option value="opinionated">Opinionated</option>
       <option value="literature">Literature</option>
+      <!--
+    NOTE: Uncomment when added!
+      <option value="knowyourlaws">Know Your Laws</option>
+      -->
       <option value="other">Other</option>
     </select>
   </div>

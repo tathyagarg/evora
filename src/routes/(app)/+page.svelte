@@ -31,7 +31,7 @@
     <div
       class="flex h-full w-full flex-col items-center justify-center gap-4 relative z-1"
     >
-      <h1 class="text-6xl">Pink Legal Club</h1>
+      <h1 class="text-4xl lg:text-6xl">Pink Legal Club</h1>
       <img src="/assets/logo.png" alt="logo" class="w-[34%] object-contain" />
       <Button>
         <button
@@ -56,10 +56,10 @@
 -->
 
 <div
-  class="h-[100vh] relative top-[100vh] z-1 bg-(--lighter-primary) text-lg border-y-2 border-secondary box-content"
+  class="min-h-[100vh] relative top-[100vh] z-1 bg-(--lighter-primary) text-lg border-y-2 border-secondary box-content"
 >
   <div
-    class="flex flex-col sm:flex-row h-full w-full items-center justify-center gap-12 p-12"
+    class="flex flex-col lg:flex-row min-h-[100vh] w-full items-center justify-between lg:justify-center gap-12 p-4 lg:p-12"
   >
     <div class="flex-1 box-border">
       <h1 class="text-7xl">Who we are</h1>
@@ -76,7 +76,7 @@
         law, society, and gender justice.
       </p>
     </div>
-    <div class="grid grid-cols-2 gap-12">
+    <div class="grid grid-cols-2 gap-12 flex-1 lg:flex-inital">
       {#each stats as stat}
         <Stat title={stat.title} value={stat.value} />
       {/each}
@@ -86,7 +86,7 @@
 
 <!-- class="h-[calc(var(--spacing)*-16-1.5em-2px+100vh)] relative top-[calc(var(--spacing)*16+1.5em+2px)] z-1 bg-(--lighter-primary) py-20 px-12 box-border flex items-center justify-center gap-12 text-lg" -->
 <div
-  class="min-h-[100vh] relative top-[100vh] z-1 bg-primary py-20 px-12 box-border text-lg"
+  class="min-h-[100vh] relative top-[100vh] z-1 bg-primary py-20 p-4 lg:px-12 box-border text-lg"
 >
   <h1 class="text-7xl">Our latest work</h1>
   <hr />
