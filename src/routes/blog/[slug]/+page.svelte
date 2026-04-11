@@ -38,7 +38,7 @@
   </div>
   <div class="flex-4" id="post-content">
     {#each post?.content.split("\n\n") as paragraph}
-      {#if !paragraph.startsWith("<ol>")}
+      {#if !paragraph.startsWith("<ol>") && !paragraph.startsWith("<pre>")}
         <p class="py-4 text-lg leading-relaxed">
           {@html paragraph.replace(/\\n/g, "<br>")}
         </p>
@@ -53,6 +53,15 @@
 </div>
 
 <style>
+  #post-content :global(pre) {
+    font-family: var(--font-text);
+    font-size: 1.25em;
+  }
+
+  #post-content :global(br) {
+    margin-bottom: 0.1em;
+  }
+
   #post-content p:first-child::first-letter {
     font-size: 3.75em;
     font-weight: bold;
@@ -66,7 +75,7 @@
   }
 
   #post-content :global(p) {
-    font-size: 1.25em;
+    font-size: 1em;
     text-align: justify;
   }
 
