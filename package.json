@@ -30,6 +30,7 @@
     "esbuild-register": "^3.6.0",
     "mdsvex": "^0.12.6",
     "node-addon-api": "^8.5.0",
+    "prisma": "^7.7.0",
     "svelte": "^5.45.6",
     "svelte-check": "^4.3.4",
     "tailwindcss": "^4.1.17",
@@ -37,6 +38,7 @@
     "vite": "^7.2.6"
   },
   "dependencies": {
+    "animejs": "^4.3.6",
     "carbon-components-svelte": "^0.101.0",
     "drizzle-seed": "^0.3.1",
     "node-gyp": "^12.2.0"
