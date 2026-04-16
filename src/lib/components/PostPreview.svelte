@@ -40,7 +40,9 @@
       </div>
       <div class="flex gap-2">
         {#each data.tags as tag}
-          <Tag data={tag} />
+          {#if tag.name}
+            <Tag data={tag} />
+          {/if}
         {/each}
       </div>
       <p class="text-lg">{data.excerpt}</p>
