@@ -65,5 +65,5 @@ main > div {
 }
 
 main > div > div {
-  background: url('/assets/waves-2.svg') 0 -75px / cover, radial-gradient(circle at 50% 50%, transparent, var(--color-primary) 90%);
+  background: url('/assets/waves.svg') 0 -75px / cover, radial-gradient(circle at 50% 50%, transparent, var(--color-primary) 90%);
 }
