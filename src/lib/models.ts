@@ -31,7 +31,7 @@ export enum PostKind {
   BlogPost = "blog",
   OpinionatedPiece = "opinionated",
   Literature = "literature",
-  KnowYourLaws = "knowyourlaws",
+  KnowYourLaws = "know your laws",
   Miscellaneous = "misc",
 }
 

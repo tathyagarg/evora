@@ -60,10 +60,7 @@
       <option value="blogs">Blogs</option>
       <option value="opinionated">Opinionated</option>
       <option value="literature">Literature</option>
-      <!--
-    NOTE: Uncomment when added!
       <option value="knowyourlaws">Know Your Laws</option>
-      -->
       <option value="other">Other</option>
     </select>
   </div>
