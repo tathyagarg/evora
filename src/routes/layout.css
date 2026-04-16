@@ -24,15 +24,15 @@ body {
 }
 
 @theme {
-  --color-secondary: #FFECD1;
-  --color-primary: #3E000C;
+  --color-secondary: #e1daca;
+  --color-primary: #762849;
   --color-emphasis: #FFC857;
 
-  --darker-secondary: #af9672;
+  --darker-secondary: #baaa86;
   --semi-secondary: rgb(from var(--color-secondary) r g b / 0.075);
 
-  --darker-primary: #32000a;
-  --lighter-primary: #5e000f;
+  --darker-primary: #581e37;
+  --lighter-primary: #b83e72;
 
   --color-background: var(--color-primary);
   --color-text: var(--color-secondary);
