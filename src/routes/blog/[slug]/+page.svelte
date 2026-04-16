@@ -2,6 +2,8 @@
   import Date from "$lib/components/Date.svelte";
   import Tag from "$lib/components/Tag.svelte";
 
+  import { marked } from "marked";
+
   let { data } = $props();
 
   let post = data.post;
@@ -32,11 +34,16 @@
     </p>
     <div>
       {#each post?.tags as tag}
-        <Tag data={tag} />
+        {#if tag.name}
+          <Tag data={tag} />
+        {/if}
       {/each}
     </div>
   </div>
   <div class="flex-4" id="post-content">
+    {@html marked.parse(post?.content || "")}
+
+    <!--
     {#each post?.content.split("\n\n") as paragraph}
       {#if !paragraph.startsWith("<ol>") && !paragraph.startsWith("<pre>")}
         <p class="py-4 text-lg leading-relaxed">
@@ -46,6 +53,7 @@
         {@html paragraph}
       {/if}
     {/each}
+    -->
     <div class="flex mt-8">
       <Date date={post?.created_at} />
     </div>
@@ -62,7 +70,7 @@
     margin-bottom: 0.1em;
   }
 
-  #post-content p:first-child::first-letter {
+  #post-content > :global(p:first-child::first-letter) {
     font-size: 3.75em;
     font-weight: bold;
     float: left;
@@ -70,13 +78,16 @@
     margin-right: 0.1em;
   }
 
-  #post-content p:not(:first-child) {
+  #post-content :global(p:not(:first-child)) {
     text-indent: 1.5em;
   }
 
   #post-content :global(p) {
     font-size: 1em;
     text-align: justify;
+
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
 
   #post-content :global(img) {
@@ -96,7 +107,7 @@
     font-size: 1.25em;
   }
 
-  #post-content p > :global(blockquote) {
+  #post-content :global(p > blockquote) {
     text-indent: 0;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -120,7 +131,7 @@
     font-style: italic;
   }
 
-  #post-content p > :global(h2) {
+  #post-content :global(h2) {
     text-indent: 0;
     margin-top: 2em;
     margin-left: 0;
@@ -136,9 +147,17 @@
     margin-bottom: 1.5em;
 
     text-align: justify;
+  }
 
-    & > :global(li) {
-      margin-bottom: 1em;
-    }
+  #post-content :global(ul) {
+    list-style: disc outside;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+
+    text-align: justify;
+  }
+
+  #post-content > :global(li) {
+    margin-bottom: 1em;
   }
 </style>
